@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "sim:run": "tsx scripts/sim-run.ts",
+    "calibrate": "node --env-file=.env.local --import tsx scripts/calibrate-jev.ts",
+    "smoke": "node --env-file=.env.local --import tsx scripts/smoke-gateway.ts",
+    "record:demo": "tsx scripts/record-demo.ts"
   },
   "dependencies": {
     "@vercel/blob": "^2.8.0",

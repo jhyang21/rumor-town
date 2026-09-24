@@ -42,3 +42,6 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# local run store (dev fallback for Blob)
+.data/
