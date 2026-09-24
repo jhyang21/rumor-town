@@ -23,6 +23,11 @@ export interface RunTokenPayload {
 }
 
 export const DEFAULT_CAPS: RunCaps = { decide: 250, speak: 70 };
+
+/** Caps for a town size. Must match src/sim/tuning.ts maxSpeechFor. */
+export function capsFor(population: number): RunCaps {
+  return { decide: 250, speak: population >= 75 ? 100 : 70 };
+}
 export const DEFAULT_TOKEN_TTL_SECONDS = 2 * 60 * 60;
 
 const DEV_SECRET = 'rumor-town-dev-only-secret-do-not-use-in-production';

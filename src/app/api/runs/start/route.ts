@@ -3,7 +3,7 @@ import { getPreset } from '@/data/presets';
 import { aiFailureResponse, errorJson, json, readJson, SERVER_AI_TIMEOUT_MS } from '@/ai/http';
 import { moderateRumor } from '@/ai/moderation';
 import { runStartBodySchema, type RumorSpecBody } from '@/ai/schemas';
-import { allowIp, clientIp, DEFAULT_CAPS, issueRunToken } from '@/ai/token';
+import { allowIp, capsFor, clientIp, issueRunToken } from '@/ai/token';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -31,6 +31,6 @@ export async function POST(req: Request): Promise<Response> {
   }
 
   const runId = randomUUID();
-  const caps = { ...DEFAULT_CAPS };
+  const caps = capsFor(parsed.data.config.population);
   return json({ runId, token: issueRunToken({ runId, caps }), caps });
 }
