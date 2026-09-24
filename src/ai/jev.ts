@@ -102,14 +102,30 @@ function rungProbs(score: number, probs?: Record<string, number>): DecisionAnswe
   return out;
 }
 
+/**
+ * Calibration. Jev answers "does the speaker bring it up" and "will the listener pass it on" with
+ * probabilities that sit low for a watchable town (live medians about 0.35 and 0.25, see
+ * scripts/fixtures/jev-calibration.json and public/demo-run.json). The engine samples these
+ * directly, so a raw 0.25 share rate kills most chains by noon. A logit shift keeps Jev's ordering
+ * across pairs (its judgement) while moving the base rate to the level the LocalOracle was tuned at.
+ */
+export const JEV_CALIBRATION = { mention: 1.2, willShare: 1.6 } as const;
+
+export function calibrateProbability(p: number, shift: number): number {
+  const q = Math.min(0.999, Math.max(0.001, p));
+  const logit = Math.log(q / (1 - q)) + shift;
+  const out = 1 / (1 + Math.exp(-logit));
+  return Math.round(out * 1000) / 1000;
+}
+
 export function mapJevAnswers(a: JevAnswers): DecisionAnswer {
   const answer = {
-    mention: a.mention.probability,
+    mention: calibrateProbability(a.mention.probability, JEV_CALIBRATION.mention),
     beliefShift: a.beliefShift.score,
     beliefShiftProbs: rungProbs(a.beliefShift.score, a.beliefShift.probabilities),
     retelling: a.retelling.choice,
     challenges: a.challenges.probability,
-    willShare: a.willShare.probability,
+    willShare: calibrateProbability(a.willShare.probability, JEV_CALIBRATION.willShare),
     verify: a.verify.probability,
   };
   const parsed = decisionAnswerSchema.safeParse(answer);

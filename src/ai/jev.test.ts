@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 vi.mock('ai', async (importOriginal) => ({ ...(await importOriginal<typeof import('ai')>()), experimental_evaluate: vi.fn() }));
 
 import { experimental_evaluate } from 'ai';
-import { BELIEF_SHIFT_RUNGS, decidePair, mapJevAnswers } from './jev';
+import { BELIEF_SHIFT_RUNGS, calibrateProbability, decidePair, JEV_CALIBRATION, mapJevAnswers } from './jev';
 import { decisionRequest, jevAnswers, samplePair } from './testHelpers';
 
 const evaluate = vi.mocked(experimental_evaluate);
@@ -34,17 +34,25 @@ describe('decidePair', () => {
     expect(JSON.stringify(q.retelling.criteria)).toContain('speakerVerified');
   });
 
-  it('maps answers exactly as returned', async () => {
+  it('maps answers as returned, with mention and willShare calibrated', async () => {
     evaluate.mockResolvedValue({ answers: jevAnswers } as never);
     await expect(decidePair(decisionRequest())).resolves.toEqual({
-      mention: 0.8,
+      mention: calibrateProbability(0.8, JEV_CALIBRATION.mention),
       beliefShift: 2.54,
       beliefShiftProbs: [0.01, 0.09, 0.25, 0.65, 0],
       retelling: 'distorted',
       challenges: 0.76,
-      willShare: 0.17,
+      willShare: calibrateProbability(0.17, JEV_CALIBRATION.willShare),
       verify: 0.81,
     });
+  });
+
+  it('calibration raises low rates, keeps order, and stays inside 0..1', () => {
+    expect(calibrateProbability(0.25, 1.6)).toBeCloseTo(0.623, 3);
+    expect(calibrateProbability(0.33, 1.2)).toBeCloseTo(0.621, 3);
+    expect(calibrateProbability(0.1, 1.6)).toBeLessThan(calibrateProbability(0.3, 1.6));
+    expect(calibrateProbability(0, 5)).toBeGreaterThan(0);
+    expect(calibrateProbability(1, 5)).toBeLessThanOrEqual(1);
   });
 
   it('builds rung probabilities from the score when none are returned', () => {
