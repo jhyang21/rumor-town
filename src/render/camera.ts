@@ -3,7 +3,7 @@
  *
  * - Units: `x`, `y` are the world pixel at the top-left of the view (1 world px = 1 art pixel).
  *   `viewW`, `viewH` are the canvas size in device pixels.
- * - Scale is an integer number of device pixels per world pixel: base (fit to width) times zoom 1..4.
+ * - Scale is an integer number of device pixels per world pixel: base (whole map fits the view) times zoom 1..4.
  * - When the view is wider or taller than the map, the map is centered on that axis.
  */
 import { MAP_HEIGHT, MAP_WIDTH, TILE_PX } from '@/sim/town/mapSpec';
@@ -14,10 +14,12 @@ export const FOCUS_MS = 400;
 
 export type ZoomLevel = 1 | 2 | 3 | 4;
 
-/** Integer device-pixel scale that best fits the map to the view width (never below 1). */
-export function fitScale(viewW: number, worldW = WORLD_W): number {
+/** Largest integer device-pixel scale at which the whole map fits the view (never below 1). */
+export function fitScale(viewW: number, viewH = Infinity, worldW = WORLD_W, worldH = WORLD_H): number {
   if (!(viewW > 0)) return 1;
-  return Math.max(1, Math.round(viewW / worldW));
+  const byW = Math.floor(viewW / worldW);
+  const byH = viewH > 0 ? Math.floor(viewH / worldH) : byW;
+  return Math.max(1, Math.min(byW, byH));
 }
 
 /** Clamp one axis: center when the view is larger than the world, else keep inside [0, world - view]. */
@@ -63,7 +65,7 @@ export interface Camera {
 export function createCamera(viewW = WORLD_W, viewH = WORLD_H): Camera {
   let vw = viewW;
   let vh = viewH;
-  let base = fitScale(vw);
+  let base = fitScale(vw, vh);
   let zoom: ZoomLevel = 1;
   let x = 0;
   let y = 0;
@@ -115,7 +117,7 @@ export function createCamera(viewW = WORLD_W, viewH = WORLD_H): Camera {
       const cy = y + vh / scale() / 2;
       vw = Math.max(1, w);
       vh = Math.max(1, h);
-      if (refit) base = fitScale(vw);
+      if (refit) base = fitScale(vw, vh);
       const c = centerOn(cx, cy);
       x = c.x;
       y = c.y;

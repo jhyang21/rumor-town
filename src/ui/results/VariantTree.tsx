@@ -3,7 +3,7 @@
  * The family tree of versions, the original at the top. Cards sit on a laid-out grid with connector
  * lines drawn in SVG underneath. Pick a card to see who first said it and how far it went.
  */
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { formatTick, type VariantNode } from '@/sim/types';
 import { INK } from './colors';
 import { mutationWord, personName, variantById } from './format';
@@ -29,10 +29,20 @@ export function VariantTree({ variants, mostWidespreadId, mostChangedId, names }
   const pos = new Map(layout.nodes.map((n) => [n.id, { x: n.col * (CARD_W + GAP_X), y: n.depth * (CARD_H + GAP_Y) }]));
   const sel = variantById(variants, selected) ?? variants[0];
   const parent = sel?.parentId ? variantById(variants, sel.parentId) : undefined;
+  const scroller = useRef<HTMLDivElement>(null);
+
+  // A wide tree centres the original beyond the visible width; start with it in view.
+  useEffect(() => {
+    const el = scroller.current;
+    const root = layout.nodes.find((n) => n.depth === 0);
+    if (!el || !root) return;
+    const centre = root.col * (CARD_W + GAP_X) + CARD_W / 2;
+    el.scrollLeft = Math.max(0, centre - el.clientWidth / 2);
+  }, [layout]);
 
   return (
     <div>
-      <div className="overflow-x-auto pb-2">
+      <div ref={scroller} className="overflow-x-auto pb-2">
         <div className="relative mx-auto" style={{ width, height }}>
           <svg className="absolute inset-0" width={width} height={height} aria-hidden="true">
             {layout.edges.map((e) => {

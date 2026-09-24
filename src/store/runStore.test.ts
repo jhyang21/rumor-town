@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import type { Driver, DriverState } from '@/runtime/driver';
 import type { RunConfig } from '@/sim/types';
-import { NO_LIVE_AI_TEXT, SHARE_FAILED_TEXT, createRunStore, customRumor, presetRumor, type RunStoreDeps } from './runStore';
+import { NO_LIVE_AI_TEXT, SHARE_FAILED_TEXT, createRunStore, customRumor, presetRumor, type RunStoreDeps, blockedText, BLOCKED_FALLBACK_TEXT } from './runStore';
 
 function fakeDriver(): Driver {
   let state: DriverState = 'idle';
@@ -75,11 +75,13 @@ describe('runStore', () => {
   });
 
   it('shows the reason in the setup sheet when a rumor is blocked', async () => {
-    const store = makeStore(async () => json(400, { error: 'blocked', reason: 'Please pick a kinder rumor.' }));
+    const store = makeStore(async () => json(400, { error: 'blocked', reason: 'real_person' }));
     await store.getState().start({ ...cfg, rumor: customRumor('something mean') });
     const s = store.getState();
     expect(s.phase).toBe('setup');
-    expect(s.setupError).toBe('Please pick a kinder rumor.');
+    expect(s.setupError).toBe(blockedText('real_person'));
+    expect(s.setupError).not.toContain('real_person');
+    expect(blockedText('nonsense')).toBe(BLOCKED_FALLBACK_TEXT);
     expect(s.engine).toBeNull();
     expect(s.starting).toBe(false);
   });

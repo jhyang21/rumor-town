@@ -45,6 +45,19 @@ export interface FocusRequest {
 export const NO_LIVE_AI_TEXT = 'Running without live AI.';
 export const SHARE_FAILED_TEXT = 'Could not save this day. Try again in a bit.';
 export const BLOCKED_FALLBACK_TEXT = 'That rumor can’t be used here. Try a different one.';
+
+/** Plain words for each moderation reason code the server returns. */
+const BLOCKED_TEXT: Record<string, string> = {
+  real_person: 'Rumors about real people can’t be used here. Try one about a made-up town.',
+  harmful: 'That rumor could cause harm. Try a gentler one.',
+  hateful: 'That rumor is hateful. Try a different one.',
+  sexual: 'That rumor can’t be used here. Try a different one.',
+  unclear: 'That rumor is hard to follow. Try a shorter, clearer one.',
+};
+
+export function blockedText(reason: string | undefined): string {
+  return BLOCKED_TEXT[reason?.trim() ?? ''] ?? BLOCKED_FALLBACK_TEXT;
+}
 export const REPLAY_SPEED: Speed = 2;
 const REFRESH_MS = 250;
 
@@ -274,7 +287,7 @@ export function createRunStore(overrides: Partial<RunStoreDeps> = {}): StoreApi<
           cache: 'no-store',
         });
         const body = (await res.json().catch(() => null)) as { error?: string; reason?: string } | null;
-        if (res.status === 400 && body?.error === 'blocked') return { blocked: body.reason?.trim() || BLOCKED_FALLBACK_TEXT };
+        if (res.status === 400 && body?.error === 'blocked') return { blocked: blockedText(body.reason) };
         if (!res.ok) return { failed: true };
         const parsed = runStartResponseSchema.safeParse(body);
         return parsed.success ? { token: parsed.data.token } : { failed: true };

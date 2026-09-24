@@ -5,9 +5,14 @@ describe('fitScale', () => {
   it('picks the integer scale that best fits the width, never below 1', () => {
     expect(fitScale(390)).toBe(1);
     expect(fitScale(640)).toBe(1);
-    expect(fitScale(1170)).toBe(2);
+    expect(fitScale(1170)).toBe(1);
+    expect(fitScale(1280)).toBe(2);
     expect(fitScale(1920)).toBe(3);
     expect(fitScale(0)).toBe(1);
+    // the height limits too: a wide, short view must still show the whole town
+    expect(fitScale(2560, 1105)).toBe(2);
+    expect(fitScale(2560, 960)).toBe(2);
+    expect(fitScale(2560, 959)).toBe(1);
   });
 });
 
