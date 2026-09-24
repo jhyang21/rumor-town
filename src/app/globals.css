@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+/* Dark warm theme: evening in a small town. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1d1612;
+  --surface: #2a201a;
+  --surface-2: #362920;
+  --line: #4d3b2e;
+  --foreground: #f3e9dc;
+  --muted: #bfae9c;
+  --accent: #f4c267;
+  --accent-ink: #2a1c10;
 }
 
 @theme inline {
@@ -12,15 +19,210 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---------- shared controls ---------- */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  padding: 0.7rem 1.25rem;
+  box-shadow: 0 3px 0 #a9772a;
+  transition: transform 80ms ease, box-shadow 80ms ease, opacity 120ms;
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+.btn-primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #a9772a;
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ctl {
+  border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--foreground);
+  font-size: 0.8rem;
+  padding: 0.3rem 0.65rem;
+  min-width: 2.25rem;
+}
+.ctl:hover:not(:disabled) {
+  background: #45342a;
+}
+.ctl:disabled {
+  opacity: 0.45;
+}
+.ctl-strong {
+  border-color: #8a6a3a;
+  color: var(--accent);
+}
+
+.zoom-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(42, 32, 26, 0.85);
+  border: 1px solid var(--line);
+  color: var(--foreground);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.chip {
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--foreground);
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+}
+.chip:hover {
+  border-color: #7a5d44;
+}
+.chip-on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+/* ---------- play layout ---------- */
+
+.play-root {
+  background: var(--background);
+}
+
+.hud,
+.timeline,
+.bottom-bar {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.hud {
+  border-bottom: 1px solid var(--line);
+}
+.timeline {
+  border-top: 1px solid var(--line);
+}
+.bottom-bar {
+  border-top: 1px solid var(--line);
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.timeline-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 999px;
+  background: var(--accent);
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 1px #a9772a;
+}
+.timeline-dot:hover,
+.timeline-dot:focus-visible {
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+.inspector {
+  position: absolute;
+  background: rgba(42, 32, 26, 0.97);
+  border: 1px solid var(--line);
+  overflow-y: auto;
+  /* phones: bottom sheet */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 60%;
+  border-radius: 1rem 1rem 0 0;
+  animation: slide-up 220ms ease-out;
+}
+@media (min-width: 768px) {
+  .inspector {
+    left: auto;
+    top: 0.75rem;
+    right: 0.75rem;
+    bottom: auto;
+    width: 20rem;
+    max-height: calc(100% - 1.5rem);
+    border-radius: 1rem;
+    animation: fade-in 160ms ease-out;
+  }
+}
+
+.sheet-backdrop {
+  background: rgba(20, 14, 10, 0.55);
+}
+.sheet {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  animation: slide-up 260ms ease-out;
+}
+
+.results-sheet {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.45);
+  animation: slide-up 380ms ease-out;
+}
+
+.thinking-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  animation: pulse 900ms ease-in-out infinite;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inspector,
+  .sheet,
+  .results-sheet,
+  .thinking-dot {
+    animation: none;
+  }
 }

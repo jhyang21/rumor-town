@@ -13,7 +13,7 @@
     "sim:run": "tsx scripts/sim-run.ts",
     "calibrate": "node --env-file-if-exists=.env.local --import tsx scripts/calibrate-jev.ts",
     "smoke": "node --env-file-if-exists=.env.local --import tsx scripts/smoke-gateway.ts",
-    "record:demo": "tsx scripts/record-demo.ts"
+    "record:demo": "node --env-file-if-exists=.env.local --import tsx scripts/record-demo.ts"
   },
   "dependencies": {
     "@vercel/blob": "^2.8.0",
