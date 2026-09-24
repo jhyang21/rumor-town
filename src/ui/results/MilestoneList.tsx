@@ -11,7 +11,7 @@ export function MilestoneList({ events }: { events: readonly SimEvent[] }) {
     <ol className="m-0 list-none space-y-2 p-0">
       {items.map((m, i) => (
         <li key={`${m.tick}-${i}`} className="flex gap-3 text-sm">
-          <span className="w-16 shrink-0 tabular-nums font-semibold" style={{ color: INK.muted }}>
+          <span className="w-20 shrink-0 whitespace-nowrap tabular-nums font-semibold" style={{ color: INK.muted }}>
             {m.time}
           </span>
           <span style={{ color: INK.text }}>{m.text}</span>
