@@ -1,0 +1,3770 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-24T09:53:52.051Z",
+  "model": "typesafe-ai/jev",
+  "liveCalls": 73,
+  "cases": [
+    {
+      "sweep": "listenerSkepticism",
+      "level": "very low (0.1)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "very low (0.1)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.53,
+        "beliefShift": 3.12,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.01,
+          0.82,
+          0.16
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.29,
+        "willShare": 0.27,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "listenerSkepticism",
+      "level": "low (0.3)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "low (0.3)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.98,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.01,
+          0.97,
+          0.01
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.35,
+        "willShare": 0.25,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "listenerSkepticism",
+      "level": "medium (0.5)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.04,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "listenerSkepticism",
+      "level": "high (0.7)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "high (0.7)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.52,
+        "beliefShift": 2.59,
+        "beliefShiftProbs": [
+          0.01,
+          0.14,
+          0.12,
+          0.73,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.53,
+        "willShare": 0.21,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "listenerSkepticism",
+      "level": "very high (0.9)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "very high (0.9)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.51,
+        "beliefShift": 2.28,
+        "beliefShiftProbs": [
+          0.02,
+          0.21,
+          0.24,
+          0.53,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.6,
+        "willShare": 0.17,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "very low (0.1)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "very low (0.1)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.5,
+        "beliefShift": 2.18,
+        "beliefShiftProbs": [
+          0.02,
+          0.15,
+          0.46,
+          0.37,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.46,
+        "willShare": 0.19,
+        "verify": 0.48
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "low (0.3)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "low (0.3)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.52,
+        "beliefShift": 2.52,
+        "beliefShiftProbs": [
+          0.01,
+          0.13,
+          0.2,
+          0.66,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.42,
+        "willShare": 0.22,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "medium (0.5)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.04,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "high (0.7)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "high (0.7)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.99,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.01,
+          0.97,
+          0.01
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.34,
+        "willShare": 0.26,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "very high (0.9)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "very high (0.9)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.53,
+        "beliefShift": 3.23,
+        "beliefShiftProbs": [
+          0,
+          0,
+          0,
+          0.76,
+          0.24
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.28,
+        "willShare": 0.26,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "very low (0.1)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "very low (0.1)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.26,
+        "beliefShift": 2.83,
+        "beliefShiftProbs": [
+          0,
+          0.05,
+          0.07,
+          0.88,
+          0
+        ],
+        "retelling": "shortened",
+        "challenges": 0.39,
+        "willShare": 0.19,
+        "verify": 0.52
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "low (0.3)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "low (0.3)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.38,
+        "beliefShift": 2.89,
+        "beliefShiftProbs": [
+          0,
+          0.04,
+          0.04,
+          0.92,
+          0
+        ],
+        "retelling": "shortened",
+        "challenges": 0.4,
+        "willShare": 0.22,
+        "verify": 0.52
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "medium (0.5)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.04,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "high (0.7)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "high (0.7)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.63,
+        "beliefShift": 2.96,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.03,
+          0.96,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.37,
+        "willShare": 0.25,
+        "verify": 0.49
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "very high (0.9)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "very high (0.9)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.69,
+        "beliefShift": 2.94,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.03,
+          0.96,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.36,
+        "willShare": 0.27,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "very low (0.1)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "very low (0.1)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.53,
+        "beliefShift": 2.96,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.02,
+          0.96,
+          0.01
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.23,
+        "willShare": 0.23,
+        "verify": 0.16
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "low (0.3)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "low (0.3)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.53,
+        "beliefShift": 2.96,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.02,
+          0.97,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.3,
+        "willShare": 0.24,
+        "verify": 0.27
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "medium (0.5)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.04,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "high (0.7)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "high (0.7)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.52,
+        "beliefShift": 2.77,
+        "beliefShiftProbs": [
+          0,
+          0.08,
+          0.07,
+          0.85,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.54,
+        "willShare": 0.21,
+        "verify": 0.74
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "very high (0.9)",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "very high (0.9)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.53,
+        "beliefShift": 2.49,
+        "beliefShiftProbs": [
+          0.02,
+          0.17,
+          0.12,
+          0.69,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.61,
+        "willShare": 0.17,
+        "verify": 0.86
+      }
+    },
+    {
+      "sweep": "closeness",
+      "level": "strangers",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "strangers, never spoken before"
+      },
+      "answer": {
+        "mention": 0.43,
+        "beliefShift": 2.88,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.08,
+          0.9,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.35,
+        "willShare": 0.24,
+        "verify": 0.48
+      }
+    },
+    {
+      "sweep": "closeness",
+      "level": "acquaintances",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "acquaintances, nod in passing"
+      },
+      "answer": {
+        "mention": 0.45,
+        "beliefShift": 2.92,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.05,
+          0.9299999999999999,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.35,
+        "willShare": 0.26,
+        "verify": 0.49
+      }
+    },
+    {
+      "sweep": "closeness",
+      "level": "neighbors",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.04,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "closeness",
+      "level": "close friends",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "close friends, talk every day"
+      },
+      "answer": {
+        "mention": 0.58,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.04,
+          0.94,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.37,
+        "willShare": 0.27,
+        "verify": 0.52
+      }
+    },
+    {
+      "sweep": "speakerVerified",
+      "level": "no",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.04,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "speakerVerified",
+      "level": "confirmed",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend), then asked the café owner, who said it is true",
+          "speakerVerified": "confirmed",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.55,
+        "beliefShift": 3.47,
+        "beliefShiftProbs": [
+          0,
+          0,
+          0,
+          0.53,
+          0.47
+        ],
+        "retelling": "corrected",
+        "challenges": 0.3,
+        "willShare": 0.26,
+        "verify": 0.53
+      }
+    },
+    {
+      "sweep": "speakerVerified",
+      "level": "debunked",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend), then asked the café owner, who said it is not true",
+          "speakerVerified": "debunked",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.49,
+        "beliefShift": 1.06,
+        "beliefShiftProbs": [
+          0.28,
+          0.47,
+          0.16,
+          0.08,
+          0.01
+        ],
+        "retelling": "corrected",
+        "challenges": 0.39,
+        "willShare": 0.2,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "never heard it",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.04,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "rejects",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "rejects"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.56,
+        "beliefShift": 2.02,
+        "beliefShiftProbs": [
+          0.01,
+          0.2,
+          0.56,
+          0.23,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.5,
+        "willShare": 0.22,
+        "verify": 0.53
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "skeptical",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "skeptical"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.55,
+        "beliefShift": 2.39,
+        "beliefShiftProbs": [
+          0,
+          0.08,
+          0.44,
+          0.48,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.51,
+        "willShare": 0.24,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "unsure",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "unsure"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.56,
+        "beliefShift": 2.67,
+        "beliefShiftProbs": [
+          0,
+          0.03,
+          0.28,
+          0.69,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.34,
+        "willShare": 0.25,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "believes",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "believes"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.54,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.41,
+          0.57,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.3,
+        "willShare": 0.27,
+        "verify": 0.53
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "strongly_believes",
+      "presentation": "labeled",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium (0.5)",
+            "willingnessToShare": "medium (0.5)",
+            "skepticism": "medium (0.5)"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium (0.5)",
+            "tendencyToVerify": "medium (0.5)",
+            "trustInSpeaker": "medium (0.5)"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "strongly_believes"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.54,
+        "beliefShift": 2.46,
+        "beliefShiftProbs": [
+          0,
+          0.07,
+          0.41,
+          0.5,
+          0.02
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.28,
+        "willShare": 0.3,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "listenerSkepticism",
+      "level": "very low (0.1)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "very low",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.57,
+        "beliefShift": 3.1,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.01,
+          0.83,
+          0.15
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.3,
+        "willShare": 0.25,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "listenerSkepticism",
+      "level": "low (0.3)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "low",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.58,
+        "beliefShift": 2.98,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.01,
+          0.97,
+          0.01
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.34,
+        "willShare": 0.25,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "listenerSkepticism",
+      "level": "medium (0.5)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.59,
+        "beliefShift": 2.9,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.06,
+          0.92,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "listenerSkepticism",
+      "level": "high (0.7)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "high",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.57,
+        "beliefShift": 2.5,
+        "beliefShiftProbs": [
+          0.01,
+          0.17,
+          0.14,
+          0.68,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.51,
+        "willShare": 0.2,
+        "verify": 0.56
+      }
+    },
+    {
+      "sweep": "listenerSkepticism",
+      "level": "very high (0.9)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "very high",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.56,
+        "beliefShift": 2.33,
+        "beliefShiftProbs": [
+          0.01,
+          0.2,
+          0.23,
+          0.55,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.53,
+        "willShare": 0.17,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "very low (0.1)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "very low"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.55,
+        "beliefShift": 2.13,
+        "beliefShiftProbs": [
+          0.03,
+          0.18,
+          0.42,
+          0.37,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.47,
+        "willShare": 0.2,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "low (0.3)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "low"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.55,
+        "beliefShift": 2.4,
+        "beliefShiftProbs": [
+          0.01,
+          0.18,
+          0.21,
+          0.6,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.44,
+        "willShare": 0.22,
+        "verify": 0.53
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "medium (0.5)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.59,
+        "beliefShift": 2.9,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.06,
+          0.92,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "high (0.7)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "high"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.58,
+        "beliefShift": 2.99,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.01,
+          0.96,
+          0.02
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.36,
+        "willShare": 0.27,
+        "verify": 0.56
+      }
+    },
+    {
+      "sweep": "trustInSpeaker",
+      "level": "very high (0.9)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "very high"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.57,
+        "beliefShift": 3.06,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.01,
+          0.89,
+          0.09
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.33,
+        "willShare": 0.25,
+        "verify": 0.57
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "very low (0.1)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "very low",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.26,
+        "beliefShift": 2.84,
+        "beliefShiftProbs": [
+          0,
+          0.04,
+          0.07,
+          0.89,
+          0
+        ],
+        "retelling": "shortened",
+        "challenges": 0.38,
+        "willShare": 0.19,
+        "verify": 0.53
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "low (0.3)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "low",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.36,
+        "beliefShift": 2.86,
+        "beliefShiftProbs": [
+          0,
+          0.03,
+          0.07,
+          0.9,
+          0
+        ],
+        "retelling": "shortened",
+        "challenges": 0.38,
+        "willShare": 0.21,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "medium (0.5)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.59,
+        "beliefShift": 2.9,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.06,
+          0.92,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "high (0.7)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "high",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.68,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.03,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.25,
+        "verify": 0.53
+      }
+    },
+    {
+      "sweep": "willingnessToShare",
+      "level": "very high (0.9)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "very high",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.72,
+        "beliefShift": 2.92,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.04,
+          0.94,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.53
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "very low (0.1)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "very low",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.57,
+        "beliefShift": 2.94,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.04,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.26,
+        "willShare": 0.22,
+        "verify": 0.18
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "low (0.3)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "low",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.57,
+        "beliefShift": 2.95,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.03,
+          0.96,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.29,
+        "willShare": 0.23,
+        "verify": 0.25
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "medium (0.5)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.59,
+        "beliefShift": 2.9,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.06,
+          0.92,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "high (0.7)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "high",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.58,
+        "beliefShift": 2.76,
+        "beliefShiftProbs": [
+          0.01,
+          0.08,
+          0.07,
+          0.84,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.52,
+        "willShare": 0.19,
+        "verify": 0.78
+      }
+    },
+    {
+      "sweep": "tendencyToVerify",
+      "level": "very high (0.9)",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "very high",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.57,
+        "beliefShift": 2.73,
+        "beliefShiftProbs": [
+          0.01,
+          0.07,
+          0.1,
+          0.81,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.55,
+        "willShare": 0.17,
+        "verify": 0.83
+      }
+    },
+    {
+      "sweep": "closeness",
+      "level": "strangers",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "strangers, never spoken before"
+      },
+      "answer": {
+        "mention": 0.47,
+        "beliefShift": 2.89,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.06,
+          0.92,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.34,
+        "willShare": 0.24,
+        "verify": 0.51
+      }
+    },
+    {
+      "sweep": "closeness",
+      "level": "acquaintances",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "acquaintances, nod in passing"
+      },
+      "answer": {
+        "mention": 0.48,
+        "beliefShift": 2.88,
+        "beliefShiftProbs": [
+          0,
+          0.03,
+          0.06,
+          0.91,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.35,
+        "willShare": 0.24,
+        "verify": 0.5
+      }
+    },
+    {
+      "sweep": "closeness",
+      "level": "neighbors",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.59,
+        "beliefShift": 2.9,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.06,
+          0.92,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "closeness",
+      "level": "close friends",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "close friends, talk every day"
+      },
+      "answer": {
+        "mention": 0.63,
+        "beliefShift": 2.93,
+        "beliefShiftProbs": [
+          0,
+          0.01,
+          0.04,
+          0.95,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.25,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "speakerVerified",
+      "level": "no",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.59,
+        "beliefShift": 2.9,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.06,
+          0.92,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "speakerVerified",
+      "level": "confirmed",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend), then asked the café owner, who said it is true",
+          "speakerVerified": "confirmed",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.6,
+        "beliefShift": 3.46,
+        "beliefShiftProbs": [
+          0,
+          0,
+          0,
+          0.53,
+          0.47
+        ],
+        "retelling": "corrected",
+        "challenges": 0.3,
+        "willShare": 0.25,
+        "verify": 0.55
+      }
+    },
+    {
+      "sweep": "speakerVerified",
+      "level": "debunked",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend), then asked the café owner, who said it is not true",
+          "speakerVerified": "debunked",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.51,
+        "beliefShift": 1.16,
+        "beliefShiftProbs": [
+          0.28,
+          0.39,
+          0.23,
+          0.09,
+          0.01
+        ],
+        "retelling": "corrected",
+        "challenges": 0.38,
+        "willShare": 0.18,
+        "verify": 0.53
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "never heard it",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "no",
+          "belief": "never heard it"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.59,
+        "beliefShift": 2.9,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.06,
+          0.92,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.38,
+        "willShare": 0.26,
+        "verify": 0.54
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "rejects",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "rejects"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.6,
+        "beliefShift": 1.98,
+        "beliefShiftProbs": [
+          0.01,
+          0.2,
+          0.6,
+          0.19,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.5,
+        "willShare": 0.24,
+        "verify": 0.56
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "skeptical",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "skeptical"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.6,
+        "beliefShift": 2.33,
+        "beliefShiftProbs": [
+          0,
+          0.08,
+          0.51,
+          0.41,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.53,
+        "willShare": 0.23,
+        "verify": 0.56
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "unsure",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "unsure"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.58,
+        "beliefShift": 2.63,
+        "beliefShiftProbs": [
+          0,
+          0.04,
+          0.3,
+          0.66,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.34,
+        "willShare": 0.25,
+        "verify": 0.56
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "believes",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "believes"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.58,
+        "beliefShift": 2.55,
+        "beliefShiftProbs": [
+          0,
+          0.02,
+          0.41,
+          0.57,
+          0
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.28,
+        "willShare": 0.27,
+        "verify": 0.56
+      }
+    },
+    {
+      "sweep": "listenerBelief",
+      "level": "strongly_believes",
+      "presentation": "bare",
+      "pair": {
+        "scene": {
+          "time": "10:30 AM",
+          "place": "the town square",
+          "setting": "quiet"
+        },
+        "rumor": {
+          "text": "The Corner Café is closing at the end of the month.",
+          "speakerSource": "heard it from Mina (close friend)",
+          "speakerVerified": "no",
+          "timesSpeakerHeard": 1
+        },
+        "speaker": {
+          "name": "Rosa",
+          "occupation": "shopkeeper",
+          "persona": "easygoing and neither chatty nor shy",
+          "traits": {
+            "sociability": "medium",
+            "willingnessToShare": "medium",
+            "skepticism": "medium"
+          },
+          "belief": "believes"
+        },
+        "listener": {
+          "name": "Tom",
+          "occupation": "office worker",
+          "persona": "gets on with the day and hears things now and then",
+          "traits": {
+            "skepticism": "medium",
+            "tendencyToVerify": "medium",
+            "trustInSpeaker": "medium"
+          },
+          "alreadyHeard": "yes: The Corner Café might close soon.",
+          "belief": "strongly_believes"
+        },
+        "relationship": "neighbors, friendly, talk weekly"
+      },
+      "answer": {
+        "mention": 0.57,
+        "beliefShift": 2.55,
+        "beliefShiftProbs": [
+          0,
+          0.05,
+          0.36,
+          0.57,
+          0.02
+        ],
+        "retelling": "unchanged",
+        "challenges": 0.27,
+        "willShare": 0.3,
+        "verify": 0.58
+      }
+    }
+  ]
+}

@@ -9,6 +9,25 @@ export const MUTATION_CLASSES = ['unchanged', 'shortened', 'softened', 'strength
 export const BELIEF_BANDS = ['rejects', 'skeptical', 'unsure', 'believes', 'strongly_believes'] as const;
 export const TRUTH_STATES = ['true', 'false', 'uncertain'] as const;
 
+/** Error codes the AI layer reports to the client (never model text). */
+export const AI_ERROR_CODES = [
+  'auth',
+  'funds',
+  'quota',
+  'verification',
+  'rate',
+  'unavailable',
+  'bad_output',
+  'unknown',
+] as const;
+export const aiErrorCodeSchema = z.enum(AI_ERROR_CODES);
+
+/** Non-200 JSON bodies from the AI routes. `code` also covers 'cap', 'busy', 'token', 'bad_request'. */
+export const apiErrorSchema = z.object({
+  code: z.string().max(40),
+  actionUrl: z.string().url().optional(),
+});
+
 export const RUMOR_MAX_CHARS = 140;
 export const MAX_DECIDE_PAIRS_PER_REQUEST = 4;
 export const MAX_ORACLE_LOG_BYTES = 200 * 1024;
@@ -43,11 +62,15 @@ export const runConfigSchema = z.object({
 
 export const runStartBodySchema = z.object({ config: runConfigSchema });
 
+export const runCapsSchema = z.object({ decide: z.number().int().positive(), speak: z.number().int().positive() });
+
+export const runStartResponseSchema = z.object({ runId: z.string(), token: z.string(), caps: runCapsSchema });
+
 /** Signed token payload (HMAC over the JSON). Caps are enforced server-side per token. */
 export const runTokenPayloadSchema = z.object({
   runId: z.string().min(8).max(40),
   exp: z.number().int(), // unix seconds
-  caps: z.object({ decide: z.number().int().positive(), speak: z.number().int().positive() }),
+  caps: runCapsSchema,
 });
 
 /* ---------- /api/decide (Jev) ---------- */
@@ -103,11 +126,13 @@ export const decisionAnswerSchema = z.object({
   verify: prob,
 });
 
-export const decideResponseSchema = z.object({
-  answers: z.array(
-    z.object({ requestId: z.number().int(), answer: decisionAnswerSchema, source: z.enum(['jev', 'local']) }),
-  ),
-});
+/** One item per request: a Jev answer, or an error code (the client then asks its LocalOracle). */
+export const decideResponseItemSchema = z.union([
+  z.object({ requestId: z.number().int(), answer: decisionAnswerSchema, source: z.literal('jev') }),
+  z.object({ requestId: z.number().int(), error: aiErrorCodeSchema }),
+]);
+
+export const decideResponseSchema = z.object({ answers: z.array(decideResponseItemSchema) });
 
 /* ---------- /api/speak (GPT) ---------- */
 
@@ -161,11 +186,14 @@ export const conversationSpeechAnswerSchema = z.object({
 
 export const verificationSpeechAnswerSchema = z.object({ authoritativeText: shortText(240) });
 
-export const speakResponseSchema = z.object({
-  requestId: z.number().int(),
-  answer: z.union([conversationSpeechAnswerSchema, verificationSpeechAnswerSchema]),
-  source: z.enum(['gpt', 'local']),
-});
+export const speakResponseSchema = z.union([
+  z.object({
+    requestId: z.number().int(),
+    answer: z.union([conversationSpeechAnswerSchema, verificationSpeechAnswerSchema]),
+    source: z.literal('gpt'),
+  }),
+  z.object({ requestId: z.number().int(), error: aiErrorCodeSchema }),
+]);
 
 /* ---------- /api/moderate ---------- */
 
@@ -201,3 +229,8 @@ export type RunsPostBody = z.infer<typeof runsPostBodySchema>;
 export type DecideBody = z.infer<typeof decideBodySchema>;
 export type SpeakBody = z.infer<typeof speakBodySchema>;
 export type ModerateResponse = z.infer<typeof moderateResponseSchema>;
+export type AiErrorCode = z.infer<typeof aiErrorCodeSchema>;
+export type RumorSpecBody = z.infer<typeof rumorSpecSchema>;
+export type DecideResponse = z.infer<typeof decideResponseSchema>;
+export type SpeakResponse = z.infer<typeof speakResponseSchema>;
+export type RunStartResponse = z.infer<typeof runStartResponseSchema>;
