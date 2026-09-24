@@ -4,7 +4,6 @@
  * Series hues were checked with the dataviz palette validator against the cream surface (all checks pass).
  */
 import { PALETTE } from '@/art/palette';
-import type { BeliefBand } from '@/sim/types';
 import type { SeriesKey } from './chartScale';
 import type { SplitKey } from './format';
 
@@ -26,19 +25,10 @@ export const SERIES: Record<SeriesKey, { color: string; label: string }> = {
 };
 
 /** Diverging: cool = does not believe, warm = believes, gray midpoint = unsure. */
-export const BAND_COLORS: Record<BeliefBand | 'never', string> = {
-  rejects: '#2f5f8f',
-  skeptical: '#7fa7cc',
-  unsure: '#a39a8c',
-  believes: '#e08a4a',
-  strongly_believes: '#b4462c',
-  never: '#f4efe4',
-};
-
 export const SPLIT_COLORS: Record<SplitKey, string> = {
-  believe: BAND_COLORS.believes,
-  unsure: BAND_COLORS.unsure,
-  reject: BAND_COLORS.rejects,
+  believe: '#e08a4a',
+  unsure: '#a39a8c',
+  reject: '#2f5f8f',
   unheard: '#e2d8c4',
 };
 

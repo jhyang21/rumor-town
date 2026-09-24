@@ -31,7 +31,7 @@ export interface ResultsPanelProps {
   standalone?: boolean;
 }
 
-export const SAFETY_LINE =
+const SAFETY_LINE =
   'This is a fictional AI simulation. Agent behavior should not be interpreted as a prediction of real human behavior.';
 
 export function ResultsPanel({ record, actions, standalone = false }: ResultsPanelProps) {

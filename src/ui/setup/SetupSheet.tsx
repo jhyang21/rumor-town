@@ -71,7 +71,7 @@ export function SetupSheet() {
   const onStart = () => {
     if (!canStart) return;
     const rumor = custom ? customRumor(customText) : draft.rumor;
-    void runStore.getState().start({ ...draft, rumor, runSeed: draft.runSeed });
+    void runStore.getState().start({ ...draft, rumor });
   };
 
   return (

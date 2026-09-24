@@ -15,7 +15,7 @@ import { useStore } from 'zustand';
 import { Engine } from '@/sim/engine';
 import { LocalOracle } from '@/sim/oracle/local';
 import type { DecisionRequest, Oracle, OracleSource, SpeechRequest, SyncOracle } from '@/sim/oracle/types';
-import { toRecord } from '@/sim/runHeadless';
+import { driveToEnd, toRecord } from '@/sim/runHeadless';
 import type { RunConfig, RunRecord, RumorSpec, SimEvent } from '@/sim/types';
 import { LOCATION_BY_ID } from '@/sim/town/mapSpec';
 import { DEFAULT_PRESET_ID, getPreset } from '@/data/presets';
@@ -58,7 +58,7 @@ const BLOCKED_TEXT: Record<string, string> = {
 export function blockedText(reason: string | undefined): string {
   return BLOCKED_TEXT[reason?.trim() ?? ''] ?? BLOCKED_FALLBACK_TEXT;
 }
-export const REPLAY_SPEED: Speed = 2;
+const REPLAY_SPEED: Speed = 2;
 const REFRESH_MS = 250;
 
 export interface RunStoreState {
@@ -135,15 +135,15 @@ export function customRumor(text: string): RumorSpec {
   return { text: text.trim(), truth: 'uncertain' };
 }
 
-export function seedFrom(random: () => number): number {
+function seedFrom(random: () => number): number {
   return Math.floor(random() * 0x100000000) >>> 0;
 }
 
-export function defaultConfig(random: () => number = Math.random): RunConfig {
+function defaultConfig(random: () => number = Math.random): RunConfig {
   return { population: 50, rumor: presetRumor(), townSeed: seedFrom(random), runSeed: seedFrom(random), overrides: {} };
 }
 
-export function countersOf(engine: Engine): Counters {
+function countersOf(engine: Engine): Counters {
   let heard = 0;
   let believe = 0;
   let told = 0;
@@ -164,7 +164,7 @@ function latestMilestone(engine: Engine): string | null {
 }
 
 /** Where the camera should go for a timeline event. */
-export function eventFocus(engine: Engine | null, ev: SimEvent): { x: number; y: number; characterId: number | null } | null {
+function eventFocus(engine: Engine | null, ev: SimEvent): { x: number; y: number; characterId: number | null } | null {
   const loc = ev.locationId ? LOCATION_BY_ID[ev.locationId] : undefined;
   const cid = ev.characterIds[0] ?? null;
   if (loc) return { x: loc.zone.x + Math.floor(loc.zone.w / 2), y: loc.zone.y + Math.floor(loc.zone.h / 2), characterId: cid };
@@ -346,7 +346,6 @@ export function createRunStore(overrides: Partial<RunStoreDeps> = {}): StoreApi<
           localLaunch(config, NO_LIVE_AI_TEXT);
           return;
         }
-        live = null;
         const liveOracle = createLiveOracle({ token: r.token });
         const local = new LocalOracle({ seed: config.runSeed });
         const sw = new SwitchableOracle(liveOracle, local);
@@ -390,13 +389,7 @@ export function createRunStore(overrides: Partial<RunStoreDeps> = {}): StoreApi<
           mode === 'replay' && replaySource ? replaySource : new LocalOracle({ seed: cfg.runSeed });
         const src = (req: DecisionRequest | SpeechRequest): OracleSource =>
           mode === 'replay' ? (fb.sourceOf?.(req.requestId) ?? 'replay') : mode === 'local' ? 'local' : 'fallback';
-        while (!engine.finished) {
-          for (const req of engine.pendingRequests()) {
-            const ans = req.kind === 'encounter' ? fb.decideSync(req) : fb.speakSync(req);
-            engine.deliver(req.requestId, ans, src(req));
-          }
-          engine.step();
-        }
+        driveToEnd(engine, fb, src);
         finish();
       },
 

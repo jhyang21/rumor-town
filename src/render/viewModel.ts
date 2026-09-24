@@ -119,7 +119,7 @@ export interface ShownBubble {
   startMs: number;
 }
 
-export function bubbleKey(b: Bubble): string {
+function bubbleKey(b: Bubble): string {
   return `${b.speakerId}|${b.fromTick}|${b.text}`;
 }
 
@@ -148,8 +148,7 @@ export class BubbleTimer {
       this.seen.set(key, b.fromTick);
       const q = this.queues.get(b.speakerId) ?? [];
       q.push({ key, text: b.text });
-      const cap = fast ? 1 : QUEUE_CAP;
-      while (q.length > cap) q.shift();
+      while (q.length > QUEUE_CAP) q.shift();
       this.queues.set(b.speakerId, q);
     }
     if (fast) for (const q of this.queues.values()) while (q.length > 1) q.shift();
@@ -196,7 +195,6 @@ export function wrapText(text: string, maxChars = 24, maxLines = 3): string[] {
   if (lines.length < maxLines && line) {
     lines.push(line);
     line = '';
-    i = words.length;
   }
   if (i < words.length || line) {
     const last = lines[maxLines - 1] ?? '';

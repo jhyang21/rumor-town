@@ -110,11 +110,6 @@ export class SafeReplayOracle implements SyncOracle {
     this.local = new LocalOracle({ seed });
   }
 
-  /** requestIds the log did not cover */
-  get missing(): ReadonlySet<number> {
-    return this.missed;
-  }
-
   decideSync(req: DecisionRequest): DecisionAnswer {
     try {
       return this.replay.decideSync(req);

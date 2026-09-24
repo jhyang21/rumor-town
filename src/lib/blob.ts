@@ -30,7 +30,7 @@ function remember(record: RunRecord): void {
   }
 }
 
-export function storeKind(): 'blob' | 'disk' {
+function storeKind(): 'blob' | 'disk' {
   if (process.env.RUNS_STORE === 'disk') return 'disk';
   return process.env.BLOB_READ_WRITE_TOKEN ? 'blob' : 'disk';
 }

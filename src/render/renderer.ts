@@ -6,7 +6,7 @@
  * their bottom edge -> signals -> name tags and speech bubbles (drawn in screen space so they stay
  * readable at every zoom).
  */
-import type { Engine, EngineSnapshot } from '@/sim/engine';
+import type { Engine } from '@/sim/engine';
 import type { LocationSpec, Rect } from '@/sim/types';
 import { BORDER, LOCATIONS, MAP_HEIGHT, MAP_WIDTH, TILE_PX, inRect, isWalkable } from '@/sim/town/mapSpec';
 import {
@@ -53,7 +53,6 @@ export interface TownRenderer {
   setZoom(z: ZoomLevel): void;
   zoomBy(delta: 1 | -1): void;
   focusTile(x: number, y: number): void;
-  focusCharacter(id: number): void;
   start(): void;
   stop(): void;
   dispose(): void;
@@ -63,13 +62,13 @@ const PICK_RADIUS_CSS = 12;
 const BG = '#2b2118';
 const SIGNAL_OF: Record<string, SignalKind> = { '!': 'heard', '?': 'doubts', '✓': 'correction' };
 
-/* ---------- ground (pure layout, exported for tests) ---------- */
+/* ---------- ground (pure layout) ---------- */
 
 const key = (x: number, y: number) => y * MAP_WIDTH + x;
-export const STREET_ROWS = [7, 22] as const;
+const STREET_ROWS = [7, 22] as const;
 
 /** Tiles drawn as dirt path: two streets and the shortest walkable link from each door to one. */
-export function pathTiles(): Set<number> {
+function pathTiles(): Set<number> {
   const out = new Set<number>();
   const street = new Set<number>();
   for (const row of STREET_ROWS)
@@ -115,7 +114,7 @@ function inAnyZone(x: number, y: number): boolean {
 }
 
 /** Deterministic decoration placed from the map alone. */
-export function propLayout(paths: Set<number>): Prop[] {
+function propLayout(paths: Set<number>): Prop[] {
   const props: Prop[] = [];
   const taken = new Set<number>();
   const free = (x: number, y: number) => isWalkable(x, y) && !paths.has(key(x, y)) && !taken.has(key(x, y));
@@ -187,8 +186,7 @@ function buildGround(): SpriteCanvas {
 /* ---------- renderer ---------- */
 
 function homeVariant(loc: LocationSpec): number {
-  const n = Number(loc.id.replace(/\D/g, ''));
-  return Number.isFinite(n) ? n % 4 : 0;
+  return Number(loc.id.replace(/\D/g, '')) % 4;
 }
 
 type Ctx = CanvasRenderingContext2D;
@@ -238,10 +236,6 @@ export function createTownRenderer(
     readFonts();
   }
 
-  function snapshotOf(engine: Engine): EngineSnapshot {
-    return engine.snapshot();
-  }
-
   function render(frame: RenderFrame = opts.getFrame?.() ?? { alpha: 0, paused: false, fast: false }) {
     const now = wall();
     const dt = lastWall ? Math.min(250, now - lastWall) : 0;
@@ -272,7 +266,7 @@ export function createTownRenderer(
       drawBuildingsOnly(fountainFrame);
       return;
     }
-    const snap = snapshotOf(engine);
+    const snap = engine.snapshot();
     views = positions.update(snap.states, snap.tick, snap.finished ? 1 : frame.alpha);
     const snapPx = (v: number) => Math.round(v * s) / s;
     const selected = opts.getSelected?.() ?? null;
@@ -287,18 +281,7 @@ export function createTownRenderer(
     }
 
     // depth-sorted buildings and characters
-    type Item = { y: number; draw: () => void };
-    const items: Item[] = [];
-    for (const loc of LOCATIONS) {
-      const fp = loc.footprint;
-      if (!fp) continue;
-      const variant = loc.kind === 'home' ? homeVariant(loc) : 0;
-      const spr = locationCanvas(loc, variant, loc.kind === 'square' ? fountainFrame : 0);
-      if (!spr) continue;
-      const bottom = (fp.y + fp.h) * TILE_PX;
-      const left = fp.x * TILE_PX - (spr.width - fp.w * TILE_PX) / 2;
-      items.push({ y: bottom, draw: () => ctx.drawImage(spr, left, bottom - spr.height) });
-    }
+    const items = buildingItems(fountainFrame);
     for (const v of views) {
       if (!v.visible) continue;
       const c = snap.characters[v.id];
@@ -325,10 +308,7 @@ export function createTownRenderer(
       ctx.drawImage(signalCanvas(kind), snapPx(v.px) + 3, snapPx(v.py) - 11);
     }
 
-    if (!showLabels) {
-      bubbles.update(snap.bubbles, snap.tick, viewClock, frame.fast);
-      return;
-    }
+    if (!showLabels) return;
 
     // screen-space labels
     ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -357,22 +337,25 @@ export function createTownRenderer(
     for (const b of order) drawBubble(b.text, views[b.speakerId], badge.has(b.speakerId), u, placed);
   }
 
-  interface Rect {
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-  }
+  type Item = { y: number; draw: () => void };
 
-  function drawBuildingsOnly(frame: number) {
+  function buildingItems(fountainFrame: number): Item[] {
+    const items: Item[] = [];
     for (const loc of LOCATIONS) {
       const fp = loc.footprint;
       if (!fp) continue;
-      const spr = locationCanvas(loc, loc.kind === 'home' ? homeVariant(loc) : 0, loc.kind === 'square' ? frame : 0);
+      const variant = loc.kind === 'home' ? homeVariant(loc) : 0;
+      const spr = locationCanvas(loc, variant, loc.kind === 'square' ? fountainFrame : 0);
       if (!spr) continue;
       const bottom = (fp.y + fp.h) * TILE_PX;
-      ctx.drawImage(spr, fp.x * TILE_PX - (spr.width - fp.w * TILE_PX) / 2, bottom - spr.height);
+      const left = fp.x * TILE_PX - (spr.width - fp.w * TILE_PX) / 2;
+      items.push({ y: bottom, draw: () => ctx.drawImage(spr, left, bottom - spr.height) });
     }
+    return items;
+  }
+
+  function drawBuildingsOnly(fountainFrame: number) {
+    for (const it of buildingItems(fountainFrame)) it.draw();
   }
 
   function drawTag(name: string, knows: boolean, corrected: boolean, v: CharacterView, u: number) {
@@ -523,15 +506,6 @@ export function createTownRenderer(
     },
     focusTile(x, y) {
       camera.focusTile(x, y, wall());
-    },
-    focusCharacter(id) {
-      const v = views[id];
-      const engine = engineGetter();
-      if (v) camera.focusWorld(v.px + TILE_PX / 2, v.py + TILE_PX / 2, wall());
-      else if (engine) {
-        const s = engine.states[id];
-        if (s) camera.focusTile(s.x, s.y, wall());
-      }
     },
     start() {
       if (running) return;

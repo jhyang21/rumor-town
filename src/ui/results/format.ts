@@ -5,7 +5,6 @@
 import {
   DAY_END_TICK,
   formatTick,
-  type BeliefBand,
   type MutationClass,
   type RunRecord,
   type RunStats,
@@ -13,9 +12,14 @@ import {
   type VariantNode,
 } from '@/sim/types';
 
+/** When the day ended: 8:00 PM if it ran out, else the tick the town went quiet. */
+export function endTime(stats: RunStats): string {
+  return stats.endReason === 'day_over' ? formatTick(DAY_END_TICK) : formatTick(stats.endedAtTick);
+}
+
 /** "By 6:40 PM, 31 of 50 people had heard it. 18 believed it." */
 export function headline(stats: RunStats): string {
-  const at = stats.endReason === 'day_over' ? formatTick(DAY_END_TICK) : formatTick(stats.endedAtTick);
+  const at = endTime(stats);
   const heard =
     stats.heard >= stats.population
       ? `all ${stats.population} people had heard it`
@@ -63,14 +67,6 @@ const MUTATION_WORDS: Record<MutationClass, string> = {
 export function mutationWord(m: MutationClass, isRoot = false): string {
   return isRoot ? 'the original' : MUTATION_WORDS[m];
 }
-
-export const BAND_WORDS: Record<BeliefBand, string> = {
-  rejects: 'Does not believe it',
-  skeptical: 'Doubts it',
-  unsure: 'Not sure',
-  believes: 'Believes it',
-  strongly_believes: 'Sure it is true',
-};
 
 export function personName(names: readonly string[] | undefined, id: number): string {
   return names?.[id] ?? `Person ${id + 1}`;

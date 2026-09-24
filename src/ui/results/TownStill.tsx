@@ -6,10 +6,10 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Engine } from '@/sim/engine';
 import { replayEngine } from '@/sim/runHeadless';
-import { DAY_END_TICK, formatTick, type RunRecord } from '@/sim/types';
+import type { RunRecord } from '@/sim/types';
 import { createTownRenderer, type TownRenderer } from '@/render/renderer';
 import { INK, SPLIT_COLORS } from './colors';
-import { beliefSplit } from './format';
+import { beliefSplit, endTime } from './format';
 
 const STILL_FRAME = { alpha: 0, paused: true, fast: false } as const;
 
@@ -17,7 +17,7 @@ export function TownStill({ record }: { record: Pick<RunRecord, 'config' | 'orac
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [state, setState] = useState<'loading' | 'ready' | 'failed'>('loading');
   const { stats } = record;
-  const at = stats.endReason === 'day_over' ? formatTick(DAY_END_TICK) : formatTick(stats.endedAtTick);
+  const at = endTime(stats);
 
   useEffect(() => {
     const canvas = canvasRef.current;
