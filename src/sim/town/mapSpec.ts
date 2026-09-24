@@ -31,7 +31,7 @@ function home(i: number): LocationSpec {
   const x = 2 + col * 6;
   return top
     ? { id: `home${i}`, kind: 'home', label: `House ${i + 1}`, footprint: { x, y: 1, w: 4, h: 3 }, zone: { x, y: 4, w: 4, h: 2 }, door: { x: x + 1, y: 4 }, canGoInside: true }
-    : { id: `home${i}`, kind: 'home', label: `House ${i + 1}`, footprint: { x, y: 26, w: 4, h: 3 }, zone: { x, y: 24, w: 4, h: 2 }, door: { x: x + 1, y: 25 }, canGoInside: true };
+    : { id: `home${i}`, kind: 'home', label: `House ${i + 1}`, footprint: { x, y: 23, w: 4, h: 3 }, zone: { x, y: 26, w: 4, h: 2 }, door: { x: x + 1, y: 26 }, canGoInside: true };
 }
 
 export const LOCATIONS: readonly LocationSpec[] = [
